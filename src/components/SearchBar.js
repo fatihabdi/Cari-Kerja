@@ -51,7 +51,7 @@ const SearchBar = () => {
           </button>
         </div>
         {filteredData.length !== 0 && (
-          <div className="containerTable">
+          <div className="absolute z-10 bg-white w-[500px] pl-3 rounded-md containerTable">
             {filteredData.slice(0, 15).map((value, key) => {
               return (
                 <Link to={`/job-vacancy/${value.id}`}>
