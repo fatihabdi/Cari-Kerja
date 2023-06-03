@@ -35,11 +35,10 @@ const TableJob = () => {
           <Thead>
             <Tr>
               <Th></Th>
-              <Th>Nama Perusahaan</Th>
-              <Th>Posisi</Th>
-              <Th>Job Type</Th>
+              <Th>Nama Ticket</Th>
+              <Th>Tanggal</Th>
               <Th>Lokasi</Th>
-              <Th>Masa Jabatan</Th>
+              <Th>Harga Ticket</Th>
               <Th>Action</Th>
             </Tr>
           </Thead>
@@ -55,12 +54,11 @@ const TableJob = () => {
                 </Td>
                 <Td>{item.company_name}</Td>
                 <Td>{item.title}</Td>
-                <Td>{item.job_type}</Td>
                 <Td>{item.company_city}</Td>
                 <Td>{item.job_tenure}</Td>
                 <Td>
                   {" "}
-                  <Link to={`/dashboard/list-job-vacancy/edit/${item.id}`}>
+                  <Link to={`/dashboard/list-ticket/edit/${item.id}`}>
                     <button className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
                       Edit
                     </button>

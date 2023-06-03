@@ -14,7 +14,7 @@ const Routess = () => {
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/job-vacancy/:id" element={<DetailJob />} />
+        <Route path="/ticket/:id" element={<DetailJob />} />
       </Routes>
     </>
   );

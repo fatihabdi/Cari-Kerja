@@ -30,24 +30,13 @@ const EditForm = () => {
           <div className="w-[250px] lg:w-full pb-10">
             <div className="flex justify-between">
               <h1 className="mt-10 text-xl font-semibold lg:ml-9">
-                Form Edit Pekerjaan {data.title}
+                Form Edit Ticket {data.title}
               </h1>
             </div>
             <div className="block mt-10 lg:flex lg:ml-9">
               <div className="flex flex-col">
                 <label className="py-2 text-sm font-semibold text-gray-600">
-                  Nama Perusahaan
-                </label>
-                <input
-                  type="text"
-                  id="company_name"
-                  value={data.company_name}
-                  onChange={handleData}
-                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
-                />
-
-                <label className="py-2 text-sm font-semibold text-gray-600">
-                  Nama Pekerjaan
+                  Nama Ticket
                 </label>
                 <input
                   type="text"
@@ -58,101 +47,56 @@ const EditForm = () => {
                 />
 
                 <label className="py-2 text-sm font-semibold text-gray-600">
-                  Deskripsi Pekerjaan
+                  Deskripsi Ticket
                 </label>
                 <textarea
                   type="text"
-                  id="job_description"
+                  id="description"
                   value={data.job_description}
                   onChange={handleData}
                   className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
                 />
 
                 <label className="py-2 text-sm font-semibold text-gray-600">
-                  Kualifikasi
+                  Tanggal
                 </label>
                 <textarea
                   type="text"
-                  id="job_qualification"
+                  id="tanggal"
                   value={data.job_qualification}
                   onChange={handleData}
                   className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
                 />
 
                 <label className="py-2 text-sm font-semibold text-gray-600">
-                  Gaji Minimal
+                  Lokasi
                 </label>
                 <input
                   type="text"
-                  id="salary_min"
+                  id="lokasi"
                   value={data.salary_min}
                   onChange={handleData}
                   className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
                 />
 
                 <label className="py-2 text-sm font-semibold text-gray-600">
-                  Gaji Maksimal
+                  Harga Ticket
                 </label>
                 <input
                   type="text"
-                  id="salary_max"
+                  id="harga"
                   value={data.salary_max}
                   onChange={handleData}
                   className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
                 />
-              </div>
-              <div className="flex flex-col lg:ml-10">
-                <label className="py-2 text-sm font-semibold text-gray-600">
-                  Lokasi
-                </label>
-                <input
-                  type="text"
-                  id="company_city"
-                  value={data.company_city}
-                  onChange={handleData}
-                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
-                />
 
                 <label className="py-2 text-sm font-semibold text-gray-600">
-                  Foto Perusahaan
+                  Foto Ticket
                 </label>
                 <input
                   type="text"
-                  id="company_image_url"
+                  id="ticket_image_url"
                   value={data.company_image_url}
-                  onChange={handleData}
-                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
-                />
-
-                <label className="py-2 text-sm font-semibold text-gray-600">
-                  Type Pekerjaan
-                </label>
-                <input
-                  type="text"
-                  id="job_type"
-                  value={data.job_type}
-                  onChange={handleData}
-                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
-                />
-
-                <label className="py-2 text-sm font-semibold text-gray-600">
-                  Masa Jabatan
-                </label>
-                <input
-                  type="text"
-                  id="job_tenure"
-                  value={data.job_tenure}
-                  onChange={handleData}
-                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
-                />
-
-                <label className="py-2 text-sm font-semibold text-gray-600">
-                  Status Pekerjaan
-                </label>
-                <input
-                  type="number"
-                  id="job_status"
-                  value={data.job_status}
                   onChange={handleData}
                   className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
                 />

@@ -15,13 +15,13 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="min-h-screen fixed left-0 bg-white w-20 lg:w-[290px]">
+      <div className="min-h-screen fixed left-0 bg-gray-400 w-20 lg:w-[290px]">
         <Link to="/dashboard">
-          <div className="flex items-center mt-[50px]">
+          <div className="flex items-center justify-center mt-[50px]">
             <img
-              src="https://carikerja.work/asset/img/logo/carikerja.png"
+              src="https://tiketapasaja.com/images/logo-new.png?774ec158f1b1e862e3cd2a526ac928b2"
               alt="logo"
-              className=""
+              className="w-52"
             />
           </div>
         </Link>
@@ -41,26 +41,26 @@ const Sidebar = () => {
         </div>
         <div className="w-16 lg:w-[250px] mx-auto mt-5 lg:mt-1">
           <Link
-            to="/dashboard/list-job-vacancy"
+            to="/dashboard/list-ticket"
             className={`flex flex-row items-center justify-center h-10 mb-5 font-medium rounded lg:justify-start text-Info-Normal hover:bg-sky-500 hover:text-white active:bg-Primary-NormalActive ${
-              location.pathname === "/dashboard/list-job-vacancy" &&
+              location.pathname === "/dashboard/list-ticket" &&
               "bg-sky-500 text-white"
             }`}
           >
             <IoListOutline className="w-6 h-6 lg:ml-3 lg:mr-2" />
-            <span className="hidden text-base lg:block">List Job</span>
+            <span className="hidden text-base lg:block">List Ticket</span>
           </Link>
         </div>
         <div className="w-16 lg:w-[250px] mx-auto mt-5 lg:mt-1">
           <Link
-            to="/dashboard/list-job-vacancy/create"
+            to="/dashboard/list-ticket/create"
             className={`flex flex-row items-center justify-center h-10 mb-5 font-medium rounded lg:justify-start text-Info-Normal hover:bg-sky-500 hover:text-white active:bg-Primary-NormalActive ${
-              location.pathname === "/dashboard/list-job-vacancy/create" &&
+              location.pathname === "/dashboard/list-ticket/create" &&
               "bg-sky-500 text-white"
             }`}
           >
             <HiPlus className="w-6 h-6 lg:ml-3 lg:mr-2" />
-            <span className="hidden text-base lg:block">Add Job</span>
+            <span className="hidden text-base lg:block">Add Ticket</span>
           </Link>
         </div>
         <div className="w-16 lg:w-[260px] mx-auto default:mt-[380px] xl:mt-[250px] border-t border-[#BBBBBB]">

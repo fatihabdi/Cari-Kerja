@@ -173,7 +173,7 @@ export const GlobalProvider = (props) => {
       })
       .then((res) => {
         console.log(res);
-        Navigate("/dashboard/list-job-vacancy");
+        Navigate("/dashboard/list-ticket");
       });
   };
 

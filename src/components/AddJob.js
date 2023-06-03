@@ -15,24 +15,14 @@ const AddJob = () => {
           <div className="w-[250px] lg:w-full pb-10">
             <div className="">
               <h1 className="mt-10 text-xl font-semibold lg:ml-9">
-                Form Tambah Pekerjaan
+                Form Tambah Ticket
               </h1>
             </div>
 
             <div className="block mt-10 lg:flex lg:ml-9">
               <div className="flex flex-col">
                 <label className="py-2 text-sm font-semibold text-gray-600">
-                  Nama Perusahaan
-                </label>
-                <input
-                  type="text"
-                  id="company_name"
-                  onChange={handleInput}
-                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
-                />
-
-                <label className="py-2 text-sm font-semibold text-gray-600">
-                  Nama Pekerjaan
+                  Nama Ticket
                 </label>
                 <input
                   type="text"
@@ -42,93 +32,51 @@ const AddJob = () => {
                 />
 
                 <label className="py-2 text-sm font-semibold text-gray-600">
-                  Deskripsi Pekerjaan
+                  Deskripsi Ticket
                 </label>
                 <textarea
                   type="text"
-                  id="job_description"
+                  id="description"
                   onChange={handleInput}
                   className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
                 />
               </div>
               <div className="flex flex-col lg:ml-10">
                 <label className="py-2 text-sm font-semibold text-gray-600">
-                  Kualifikasi
+                  Tanggal
                 </label>
-                <textarea
-                  type="text"
-                  id="job_qualification"
+                <input
+                  type="date"
+                  id="tanggal"
                   onChange={handleInput}
                   className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
                 />
 
-                <label className="py-2 text-sm font-semibold text-gray-600">
-                  Gaji Minimal
-                </label>
-                <input
-                  type="number"
-                  id="salary_min"
-                  onChange={handleInput}
-                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
-                />
-
-                <label className="py-2 text-sm font-semibold text-gray-600">
-                  Gaji Maksimal
-                </label>
-                <input
-                  type="number"
-                  id="salary_max"
-                  onChange={handleInput}
-                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
-                />
-              </div>
-              <div className="flex flex-col lg:ml-10">
                 <label className="py-2 text-sm font-semibold text-gray-600">
                   Lokasi
                 </label>
                 <input
                   type="text"
-                  id="company_city"
+                  id="lokasi"
                   onChange={handleInput}
                   className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
                 />
 
                 <label className="py-2 text-sm font-semibold text-gray-600">
-                  Foto Perusahaan
-                </label>
-                <input
-                  type="text"
-                  id="company_image_url"
-                  onChange={handleInput}
-                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
-                />
-
-                <label className="py-2 text-sm font-semibold text-gray-600">
-                  Type Pekerjaan
-                </label>
-                <input
-                  type="text"
-                  id="job_type"
-                  onChange={handleInput}
-                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
-                />
-
-                <label className="py-2 text-sm font-semibold text-gray-600">
-                  Masa Jabatan
-                </label>
-                <input
-                  type="text"
-                  id="job_tenure"
-                  onChange={handleInput}
-                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
-                />
-
-                <label className="py-2 text-sm font-semibold text-gray-600">
-                  Status Pekerjaan
+                  Harga Ticket
                 </label>
                 <input
                   type="number"
-                  id="job_status"
+                  id="harga"
+                  onChange={handleInput}
+                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
+                />
+                <label className="py-2 text-sm font-semibold text-gray-600">
+                  Foto Ticket
+                </label>
+                <input
+                  type="text"
+                  id="ticket_image_url"
                   onChange={handleInput}
                   className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
                 />

@@ -15,9 +15,9 @@ const DataJob = () => {
           <div className="w-[250px] lg:w-full pb-10">
             <div className="flex justify-between">
               <h1 className="mt-10 text-xl font-semibold lg:ml-9">
-                List Pekerjaan
+                List Ticket
               </h1>
-              <Link to="/list-job-vacancy/form">
+              <Link to="/dashboard/list-ticket/create">
                 <button className="w-10 h-10 mt-10 text-white rounded shadow-md lg:w-28 bg-sky-500 lg:flex lg:items-center lg:justify-center">
                   <HiPlus className="inline-block lg:mr-2" />
                   <span className="hidden lg:block">Add Data</span>

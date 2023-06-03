@@ -37,7 +37,7 @@ const SearchBar = () => {
             type="search"
             id="default-search"
             className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Cari Pekerjaan..."
+            placeholder="Cari Tiket..."
             value={wordEntered}
             onChange={handleFilter}
             required
@@ -54,7 +54,7 @@ const SearchBar = () => {
           <div className="absolute z-10 bg-white w-[500px] pl-3 rounded-md containerTable">
             {filteredData.slice(0, 15).map((value, key) => {
               return (
-                <Link to={`/job-vacancy/${value.id}`}>
+                <Link to={`/ticket/${value.id}`}>
                   <p className="my-5 text-xl font-medium rounded">
                     {value.title}
                   </p>

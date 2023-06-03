@@ -11,11 +11,11 @@ const Login = () => {
 
   return (
     <>
-      <section className="bg-gray-50 dark:bg-gray-900">
+      <section className="bg-gray-400 dark:bg-gray-900">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <img
             className="w-20 mb-2 mr-2"
-            src="https://carikerja.work/asset/img/logo/carikerja.png"
+            src="https://tiketapasaja.com/images/logo-new.png?774ec158f1b1e862e3cd2a526ac928b2"
             alt="logo"
           />
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">

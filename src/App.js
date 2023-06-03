@@ -27,16 +27,13 @@ const App = () => {
               <Route path="/about" element={<About />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/job-vacancy/:id" element={<DetailJob />} />
+              <Route path="/ticket/:id" element={<DetailJob />} />
 
               <Route exact path="/" element={<RequireAuth />}>
                 <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/dashboard/list-ticket" element={<DataJob />} />
                 <Route
-                  path="/dashboard/list-job-vacancy"
-                  element={<DataJob />}
-                />
-                <Route
-                  path="/dashboard/list-job-vacancy/create"
+                  path="/dashboard/list-ticket/create"
                   element={<AddJob />}
                 />
                 <Route path="/dashboard/profile" element={<Profile />} />
@@ -45,7 +42,7 @@ const App = () => {
                   element={<ChangePassword />}
                 />
                 <Route
-                  path="/dashboard/list-job-vacancy/edit/:id"
+                  path="/dashboard/list-ticket/edit/:id"
                   element={<EditForm />}
                 />
               </Route>

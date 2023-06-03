@@ -24,10 +24,10 @@ const About = () => {
         <div className="container mx-auto mt-10">
           <h1 className="text-xl font-bold text-center">Tentang Kami</h1>
           <h1 className="text-center text-s">
-            CariKerja adalah sebuah portal lowongan pekerjaan berbasis digital
-            yang dapat memberikan manfaat kepada orang banyak khususnya para
-            pencari kerja dan penyedia lapangan pekerjaan agar dapat mencapai
-            tujuan bersama dengan cara menghubungkan bisnis dan bakat.
+            TiketApaSaja adalah sebuah portal pembelian tiket berbasis digital yang
+            dapat memberikan manfaat kepada orang banyak khususnya para pencari
+            tiket konser ataupun event agar bisa mendapatkan tiket dengan harga
+            terjangkau.
           </h1>
           <br />
           <br />
@@ -37,7 +37,7 @@ const About = () => {
             Jl. Godean KM. 4 No.66, Kwarasan, Nogotirto, Gamping, Sleman
             Regency, Special Region of Yogyakarta 55293, Indonesia
           </h1>
-          <h1 className="text-center text-s">info@carikerja.co.id</h1>
+          <h1 className="text-center text-s">info@tiketapasaja.co.id</h1>
         </div>
       </div>
       <Footer />
