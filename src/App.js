@@ -15,6 +15,7 @@ import AddJob from "./components/AddJob";
 import Profile from "./components/Profile";
 import ChangePassword from "./components/ChangePassword";
 import EditForm from "./components/EditForm";
+import Pembayaran from "./components/Pembayaran";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/ticket/:id" element={<DetailJob />} />
+              <Route path="/pembayaran" element={<Pembayaran />} />
 
               <Route exact path="/" element={<RequireAuth />}>
                 <Route path="/dashboard" element={<Dashboard />} />

@@ -96,9 +96,11 @@ const DetailJob = () => {
             <p className="mt-2">
               {data.salary_min} - {data.salary_max}
             </p>
-            <button className="h-10 mt-5 font-semibold text-white bg-blue-500 rounded w-28">
-              Apply
-            </button>
+            <Link to="/pembayaran">
+              <button className="h-10 mt-5 font-semibold text-white bg-blue-500 rounded w-28">
+                Book
+              </button>
+            </Link>
           </div>
         </div>
       </section>
