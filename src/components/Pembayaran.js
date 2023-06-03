@@ -101,7 +101,7 @@ export default function Pembayaran() {
             <li className="text-[#5D6B77] text-[16px]">Masukkan PIN m-BCA.</li>
             <li className="text-[#5D6B77] text-[16px]">Transaksi Berhasil.</li>
           </ol>
-          <Link to="/upload">
+          <Link to="/print-ticket">
             <button className="h-10 mt-5 font-semibold text-white bg-blue-500 rounded w-28">
               Bayar
             </button>

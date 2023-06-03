@@ -16,6 +16,7 @@ import Profile from "./components/Profile";
 import ChangePassword from "./components/ChangePassword";
 import EditForm from "./components/EditForm";
 import Pembayaran from "./components/Pembayaran";
+import PrintTicket from "./components/PrintTicket";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
               <Route path="/register" element={<Register />} />
               <Route path="/ticket/:id" element={<DetailJob />} />
               <Route path="/pembayaran" element={<Pembayaran />} />
+              <Route path="/print-ticket" element={<PrintTicket />} />
 
               <Route exact path="/" element={<RequireAuth />}>
                 <Route path="/dashboard" element={<Dashboard />} />
