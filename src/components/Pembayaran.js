@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./navbar";
 import Footer from "./Footer";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 
 export default function Pembayaran() {
+  const [data, setData] = useState([]);
+  const { id } = useParams();
+  const url = process.env.REACT_APP_API_URL + `/concerts/${id}`;
+
+  useEffect(() => {
+    axios.get(url).then((res) => {
+      setData(res.data.data);
+      console.log(res.data.data);
+    });
+  }, []);
   return (
     <div>
       <Navbar />
@@ -28,7 +39,7 @@ export default function Pembayaran() {
                 <h1>:</h1>
               </div>
               <h1 className="ml-[12px] text-dark font-medium text-[16px]">
-                Rp. 321.000
+                Rp. {data.price}
               </h1>
             </div>
             <div className="flex justify-between mt-[12px]">
@@ -51,7 +62,7 @@ export default function Pembayaran() {
                 <h1>:</h1>
               </div>
               <h1 className="ml-[12px] text-end text-dark font-bold text-[24px]">
-                Rp. 321.000
+                Rp. {data.price}
               </h1>
             </div>
           </div>
@@ -101,7 +112,7 @@ export default function Pembayaran() {
             <li className="text-[#5D6B77] text-[16px]">Masukkan PIN m-BCA.</li>
             <li className="text-[#5D6B77] text-[16px]">Transaksi Berhasil.</li>
           </ol>
-          <Link to="/print-ticket">
+          <Link to={`/print-ticket/${data.id}`}>
             <button className="h-10 mt-5 font-semibold text-white bg-blue-500 rounded w-28">
               Bayar
             </button>

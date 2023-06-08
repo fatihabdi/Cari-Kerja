@@ -1,21 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "./Footer";
 import Navbar from "./navbar";
 import barcode from "../Asset/barcode.png";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 export default function PrintTicket() {
+  const [data, setData] = useState([]);
+  const { id } = useParams();
+  const url = process.env.REACT_APP_API_URL + `/concerts/${id}`;
+
+  useEffect(() => {
+    axios.get(url).then((res) => {
+      setData(res.data.data);
+      console.log(res.data.data);
+    });
+  }, []);
   return (
     <div>
       <Navbar />
       <div className="flex flex-col py-[100px] items-center">
         <img src={barcode} alt="logo" className="" />
         <h1 className="text-[32px] text-dark font-bold mt-[40px]">
-          We The Fest 2023
+          {data.name}
         </h1>
-        <h1 className="text-[16px] text-[#5D6B77] mt-2">20-22 Agustus 2023</h1>
-        <h1 className="text-[16px] text-[#5D6B77] mt-2">
-          JIExpo Kemayoran, Jakarta
-        </h1>
+        <h1 className="text-[16px] text-[#5D6B77] mt-2">{data.startDate} - {data.endDate}</h1>
         <div className="w-[624px] h-min-content bg-white rounded mt-[30px] py-[24px] px-[20px] shadow-[0px_0px_4px_rgba(0,0,0,0.2)]">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
@@ -25,7 +34,7 @@ export default function PrintTicket() {
               <h1>:</h1>
             </div>
             <h1 className="ml-[12px] text-dark font-medium text-[16px]">
-              ASDF56AH
+              {data.serial_number}
             </h1>
           </div>
           <div className="flex items-center justify-between">
@@ -103,7 +112,7 @@ export default function PrintTicket() {
               <h1>:</h1>
             </div>
             <h1 className="ml-[12px] text-end text-dark font-bold text-[24px]">
-              Rp. 321.000
+              Rp. {data.price}
             </h1>
           </div>
         </div>

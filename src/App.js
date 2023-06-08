@@ -30,8 +30,8 @@ const App = () => {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/ticket/:id" element={<DetailJob />} />
-              <Route path="/pembayaran" element={<Pembayaran />} />
-              <Route path="/print-ticket" element={<PrintTicket />} />
+              <Route path="/pembayaran/:id" element={<Pembayaran />} />
+              <Route path="/print-ticket/:id" element={<PrintTicket />} />
 
               <Route exact path="/" element={<RequireAuth />}>
                 <Route path="/dashboard" element={<Dashboard />} />

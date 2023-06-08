@@ -5,16 +5,16 @@ import Navbar from "./navbar";
 import Footer from "./Footer";
 
 const DetailJob = () => {
-  const url = "https://dev-example.sanbercloud.com/api/job-vacancy";
+  const url = process.env.REACT_APP_API_URL + "/concerts";
 
   const [data, setData] = useState([]);
-  const [jobQual, setJobQual] = useState([]);
+  // const [jobQual, setJobQual] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
     axios.get(`${url}/${id}`).then((res) => {
-      setData(res.data);
-      setJobQual(res.data.job_qualification);
+      setData(res.data.data);
+      // setJobQual(res.data.job_qualification);
     });
   }, []);
 
@@ -59,7 +59,7 @@ const DetailJob = () => {
                   />
                 </svg>
                 <span className="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">
-                  {data.title}
+                  {data.name}
                 </span>
               </div>
             </li>
@@ -72,31 +72,18 @@ const DetailJob = () => {
               alt={data.title}
               className="w-[120px]"
             />
-            <h1 className="mt-5 text-2xl font-bold">{data.company_name}</h1>
-            <p className="mt-3">{data.company_city}</p>
-            <h1 className="mt-10 text-2xl font-semibold">{data.title}</h1>
-            <h1 className="mt-10 text-xl font-semibold">Job Description :</h1>
-            <p className="mt-2 text-justify">{data.job_description}</p>
-            <h1 className="mt-10 text-xl font-semibold">Job Qualification :</h1>
-            <ul className="mt-2">
-              {jobQual
-                .toString()
-                .split("- ")
-                .map((item, index) => (
-                  <li key={index} className="ml-5">
-                    {item}
-                  </li>
-                ))}
-            </ul>
-            <h1 className="mt-10 font-semibold text-md">Job Type :</h1>
+            <h1 className="mt-10 text-2xl font-semibold">{data.name}</h1>
+            <h1 className="mt-10 text-xl font-semibold">Type Ticket :</h1>
+            <p className="mt-2 text-justify uppercase">{data.type}</p>
+            <h1 className="mt-3 font-semibold text-md">Price :</h1>
             <p className="mt-2">
-              {data.job_type} & {data.job_tenure}
+              Rp. {data.price}
             </p>
-            <h1 className="mt-10 font-semibold text-md">Salary Range :</h1>
+            <h1 className="mt-3 font-semibold text-md">Date :</h1>
             <p className="mt-2">
-              {data.salary_min} - {data.salary_max}
+              {data.startDate} - {data.startDate}
             </p>
-            <Link to="/pembayaran">
+            <Link to={`/pembayaran/${data.id}`}>
               <button className="h-10 mt-5 font-semibold text-white bg-blue-500 rounded w-28">
                 Book
               </button>

@@ -70,9 +70,7 @@ export const GlobalProvider = (props) => {
   const handleDelete = (e) => {
     let id = parseInt(e.target.value);
     axios
-      .delete(`https://dev-example.sanbercloud.com/api/job-vacancy/${id}`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      })
+      .delete(process.env.REACT_APP_API_URL + `/concerts/${id}`)
       .then((res) => {
         console.log(res);
         window.location.reload();
@@ -83,7 +81,7 @@ export const GlobalProvider = (props) => {
     const searchWord = e.target.value;
     setWordEntered(searchWord);
     const newFilter = data.filter((value) => {
-      return value.title.toLowerCase().includes(searchWord.toLowerCase());
+      return value.name.toLowerCase().includes(searchWord.toLowerCase());
     });
 
     if (searchWord === "") {
@@ -155,9 +153,7 @@ export const GlobalProvider = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://dev-example.sanbercloud.com/api/job-vacancy", input, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      })
+      .post(process.env.REACT_APP_API_URL + "/concerts", input)
       .then((res) => {
         console.log(res);
         window.location.reload();
@@ -168,8 +164,10 @@ export const GlobalProvider = (props) => {
     let id = parseInt(e.target.value);
     e.preventDefault();
     axios
-      .put(`https://dev-example.sanbercloud.com/api/job-vacancy/${id}`, data, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      .put(process.env.REACT_APP_API_URL + `/concerts/${id}`, input, {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
       })
       .then((res) => {
         console.log(res);

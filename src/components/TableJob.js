@@ -19,9 +19,9 @@ const TableJob = () => {
 
   useEffect(() => {
     axios
-      .get("https://dev-example.sanbercloud.com/api/job-vacancy")
+      .get(process.env.REACT_APP_API_URL + "/concerts")
       .then((res) => {
-        setData(res.data.data);
+        setData(res.data.datas);
       })
       .catch((error) => {
         console.log(error);
@@ -34,10 +34,9 @@ const TableJob = () => {
         <Table variant="simple">
           <Thead>
             <Tr>
-              <Th></Th>
               <Th>Nama Ticket</Th>
               <Th>Tanggal</Th>
-              <Th>Lokasi</Th>
+              <Th>Type</Th>
               <Th>Harga Ticket</Th>
               <Th>Action</Th>
             </Tr>
@@ -45,17 +44,10 @@ const TableJob = () => {
           <Tbody>
             {data.map((item, index) => (
               <Tr key={index} value={item.id}>
-                <Td>
-                  <img
-                    src={item.company_image_url}
-                    className="w-14"
-                    alt="foto"
-                  />
-                </Td>
-                <Td>{item.company_name}</Td>
-                <Td>{item.title}</Td>
-                <Td>{item.company_city}</Td>
-                <Td>{item.job_tenure}</Td>
+                <Td>{item.name}</Td>
+                <Td>{item.startDate} - {item.endDate}</Td>
+                <Td className="uppercase">{item.type}</Td>
+                <Td>Rp. {item.price}</Td>
                 <Td>
                   {" "}
                   <Link to={`/dashboard/list-ticket/edit/${item.id}`}>

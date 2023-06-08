@@ -5,12 +5,12 @@ import axios from "axios";
 
 const JobCard = () => {
   const [data, setData] = useState([]);
-  const url = "https://dev-example.sanbercloud.com/api/job-vacancy";
+  const url = process.env.REACT_APP_API_URL + "/concerts";
 
   useEffect(() => {
     axios.get(url).then((res) => {
-      setData(res.data.data);
-      console.log(res.data);
+      setData(res.data.datas);
+      console.log(res.data.datas);
     });
   }, []);
   return (
@@ -26,15 +26,21 @@ const JobCard = () => {
           >
             <img
               className="rounded-t-lg"
-              src={"https://flowbite.com/docs/images/blog/image-1.jpg"}
+              src={"https://whatsnewindonesia.com/sites/default/files/styles/1280x800/public/2022-09/hanny-naibaho-aWXVxy8BSzc-unsplash-1024x683.jpg?itok=h0xCpdRD"}
               alt=""
             />
             <div className="p-5">
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                {item.title}
+                {item.name}
               </h5>
               <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                {item.job_description.substring(0, 100)}
+                Category : <span className="uppercase">{item.type}</span>
+              </p>
+              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                Price : Rp. <span className="uppercase">{item.price}</span>
+              </p>
+              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                Date: <span className="uppercase">{item.startDate.substring(0, 10)}</span> - <span className="uppercase">{item.endDate.substring(0, 10)}</span>
               </p>
               <Link to={`/ticket/${item.id}`}>
                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">

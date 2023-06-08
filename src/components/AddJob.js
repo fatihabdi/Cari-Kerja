@@ -26,38 +26,38 @@ const AddJob = () => {
                 </label>
                 <input
                   type="text"
-                  id="title"
+                  id="name"
                   onChange={handleInput}
                   className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
                 />
 
                 <label className="py-2 text-sm font-semibold text-gray-600">
-                  Deskripsi Ticket
+                  Tipe Ticket
                 </label>
-                <textarea
+                <input
                   type="text"
-                  id="description"
+                  id="type"
                   onChange={handleInput}
                   className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
                 />
               </div>
               <div className="flex flex-col lg:ml-10">
                 <label className="py-2 text-sm font-semibold text-gray-600">
-                  Tanggal
+                  Tanggal Mulai
                 </label>
                 <input
                   type="date"
-                  id="tanggal"
+                  id="startDate"
                   onChange={handleInput}
                   className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
                 />
 
                 <label className="py-2 text-sm font-semibold text-gray-600">
-                  Lokasi
+                  Tanggal Selesai
                 </label>
                 <input
-                  type="text"
-                  id="lokasi"
+                  type="date"
+                  id="endDate"
                   onChange={handleInput}
                   className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
                 />
@@ -67,16 +67,7 @@ const AddJob = () => {
                 </label>
                 <input
                   type="number"
-                  id="harga"
-                  onChange={handleInput}
-                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
-                />
-                <label className="py-2 text-sm font-semibold text-gray-600">
-                  Foto Ticket
-                </label>
-                <input
-                  type="text"
-                  id="ticket_image_url"
+                  id="price"
                   onChange={handleInput}
                   className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
                 />

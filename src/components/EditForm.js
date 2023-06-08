@@ -6,21 +6,21 @@ import Header from "./Header";
 import { GlobalContext } from "../context/GlobalContext";
 
 const EditForm = () => {
-  const url = "https://dev-example.sanbercloud.com/api/job-vacancy";
+  const url = process.env.REACT_APP_API_URL + "/concerts";
   const { state, handleFunction } = useContext(GlobalContext);
-  const { handleEdit, handleData } = handleFunction;
-  const { data, setData } = state;
+  const { handleEdit, handleInput } = handleFunction;
+  const { input, setInput } = state;
 
   // const [data, setData] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
     axios.get(`${url}/${id}`).then((res) => {
-      setData(res.data);
+      setInput(res.data.data);
     });
   }, []);
 
-  console.log(data);
+  console.log(input);
   return (
     <>
       <div className="flex bg-gray-300">
@@ -30,7 +30,7 @@ const EditForm = () => {
           <div className="w-[250px] lg:w-full pb-10">
             <div className="flex justify-between">
               <h1 className="mt-10 text-xl font-semibold lg:ml-9">
-                Form Edit Ticket {data.title}
+                Form Edit Ticket {input.name}
               </h1>
             </div>
             <div className="block mt-10 lg:flex lg:ml-9">
@@ -40,42 +40,43 @@ const EditForm = () => {
                 </label>
                 <input
                   type="text"
-                  id="title"
-                  value={data.title}
-                  onChange={handleData}
+                  id="name"
+                  value={input.name}
+                  onChange={handleInput}
                   className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
                 />
 
                 <label className="py-2 text-sm font-semibold text-gray-600">
-                  Deskripsi Ticket
-                </label>
-                <textarea
-                  type="text"
-                  id="description"
-                  value={data.job_description}
-                  onChange={handleData}
-                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
-                />
-
-                <label className="py-2 text-sm font-semibold text-gray-600">
-                  Tanggal
-                </label>
-                <textarea
-                  type="text"
-                  id="tanggal"
-                  value={data.job_qualification}
-                  onChange={handleData}
-                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
-                />
-
-                <label className="py-2 text-sm font-semibold text-gray-600">
-                  Lokasi
+                  Tipe Ticket
                 </label>
                 <input
                   type="text"
-                  id="lokasi"
-                  value={data.salary_min}
-                  onChange={handleData}
+                  id="type"
+                  value={input.type}
+                  onChange={handleInput}
+                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
+                />
+              </div>
+              <div className="flex flex-col lg:ml-10">
+                <label className="py-2 text-sm font-semibold text-gray-600">
+                  Tanggal Mulai
+                </label>
+                <input
+                  type="date"
+                  id="startDate"
+                  value={input.startDate}
+                  onChange={handleInput}
+                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
+                />
+
+                <label className="py-2 text-sm font-semibold text-gray-600">
+                  Tanggal Selesai
+                </label>
+                <input
+                  type="date"
+                  id="endDate"
+                  value={input.endDate}
+                  onChange={handleInput}
                   className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
                 />
 
@@ -83,28 +84,24 @@ const EditForm = () => {
                   Harga Ticket
                 </label>
                 <input
-                  type="text"
-                  id="harga"
-                  value={data.salary_max}
-                  onChange={handleData}
+                  type="number"
+                  id="price"
+                  value={input.price}
+                  onChange={handleInput}
                   className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
                 />
-
-                <label className="py-2 text-sm font-semibold text-gray-600">
-                  Foto Ticket
-                </label>
-                <input
-                  type="text"
-                  id="ticket_image_url"
-                  value={data.company_image_url}
-                  onChange={handleData}
-                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
-                />
+                {/* <input
+                  type="number"
+                  id="serial_number"
+                  value={input.serial_number}
+                  onChange={handleInput}
+                  className="hidden px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky-500"
+                /> */}
               </div>
             </div>
             <button
               onClick={handleEdit}
-              value={data.id}
+              value={input.id}
               className="w-32 h-10 mt-10 ml-10 text-white rounded-lg bg-sky-500"
             >
               Simpan

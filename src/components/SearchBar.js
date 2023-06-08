@@ -12,9 +12,9 @@ const SearchBar = () => {
 
   useEffect(() => {
     axios
-      .get("https://dev-example.sanbercloud.com/api/job-vacancy")
+      .get(process.env.REACT_APP_API_URL + "/concerts")
       .then((res) => {
-        setData([...res.data.data]);
+        setData([...res.data.datas]);
       })
       .catch((error) => {
         console.log(error);
@@ -56,7 +56,7 @@ const SearchBar = () => {
               return (
                 <Link to={`/ticket/${value.id}`}>
                   <p className="my-5 text-xl font-medium rounded">
-                    {value.title}
+                    {value.name}
                   </p>
                 </Link>
               );
